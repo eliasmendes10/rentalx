@@ -2,15 +2,15 @@ import { Specification } from "../model/Specification";
 import {
   ISpecificationsRepository,
   ICreateSpecificationDTO,
-} from "./ISpecificationRepository";
+} from "./ISpecificationsRepository";
 
 //DTO => Data Transfer Object
 
 class SpecificationRepository implements ISpecificationsRepository {
-  private categories: Specification[];
+  private specifications: Specification[];
 
   constructor() {
-    this.categories = [];
+    this.specifications = [];
   }
 
   create({ name, description }: ICreateSpecificationDTO): void {
@@ -18,17 +18,19 @@ class SpecificationRepository implements ISpecificationsRepository {
 
     Object.assign(category, { name, description, created_at: new Date() });
 
-    this.categories.push(category);
+    this.specifications.push(category);
   }
 
   list(): Specification[] {
-    return this.categories;
+    return this.specifications;
   }
 
   findByName(name: string): Specification {
-    const category = this.categories.find((Category) => Category.name === name);
+    const specification = this.specifications.find(
+      (specification) => specification.name === name
+    );
 
-    return category;
+    return specification;
   }
 }
 
