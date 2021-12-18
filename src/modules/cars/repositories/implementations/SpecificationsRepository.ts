@@ -1,18 +1,28 @@
-import { Specification } from "../model/Specification";
+import { Specification } from "../../model/Specification";
 import {
   ISpecificationsRepository,
   ICreateSpecificationDTO,
-} from "./ISpecificationsRepository";
+} from "../ISpecificationsRepository";
 
 //DTO => Data Transfer Object
 
-class SpecificationRepository implements ISpecificationsRepository {
+class SpecificationsRepository implements ISpecificationsRepository {
   private specifications: Specification[];
 
-  constructor() {
+  //#####Singleton Pattern (Para evitar multiplas instancias de objeto)
+  private static INSTANCE: SpecificationsRepository;
+
+  private constructor() {
     this.specifications = [];
   }
 
+  public static getInstance(): SpecificationsRepository {
+    if (!SpecificationsRepository.INSTANCE) {
+      SpecificationsRepository.INSTANCE = new SpecificationsRepository();
+    }
+    return SpecificationsRepository.INSTANCE;
+  }
+  //#####Singleton Pattern
   create({ name, description }: ICreateSpecificationDTO): void {
     const category = new Specification();
 
@@ -34,4 +44,4 @@ class SpecificationRepository implements ISpecificationsRepository {
   }
 }
 
-export { SpecificationRepository };
+export { SpecificationsRepository };
