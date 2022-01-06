@@ -20,3 +20,6 @@ Rodar migration
 yarn typeorm migration:run
 Reverter Migration
 yarn typeorm migration:revert
+
+Ferramenta para Injeção de Dependencia. (TSyringe)
+yarn add tsyringe
