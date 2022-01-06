@@ -10,9 +10,6 @@ import { getRepository, Repository } from "typeorm";
 class CategoriesRepository implements ICategoriesRepository {
   private repository: Repository<Category>;
 
-  //#####Singleton Pattern (Para evitar multiplas instancias de objeto)
-  private static INSTANCE: CategoriesRepository;
-
   constructor() {
     this.repository = getRepository(Category);
   }
