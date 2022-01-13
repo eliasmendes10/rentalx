@@ -23,3 +23,23 @@ yarn typeorm migration:revert
 
 Ferramenta para Injeção de Dependencia. (TSyringe)
 yarn add tsyringe
+
+
+#TESTES - jest
+
+yarn add jest -D
+yarn add @types/jest -D
+
+#para criar jest.config.ts
+yarn jest --init
+
+add preset
+yarn add ts-jest -D
+no config jest adicionar/alterar a propriedade --> preset: "ts-jest"
+Depois é necessário configurar o mapeamento das classes que desejamos efetuar testes 
+
+Recomendado deixar as pastas dos testes dentro da estrutura "modules > useCase"
+Assim fica mais fácil de saber onde está cada teste e o que ele vai fazer
+
+bail: true --> default inicia com false
+indica para o jest se a gente quer ou não que o switch de teste pare ao encontrar um erro
