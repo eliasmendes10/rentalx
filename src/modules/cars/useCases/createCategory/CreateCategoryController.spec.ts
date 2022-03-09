@@ -21,7 +21,10 @@ describe("Create Category Controller", async () => {
       `);
   });
 
-  afterAll(() => {});
+  afterAll(async () => {
+    //await connection.dropDatabase();
+    await connection.close();
+  });
 
   it("Should be able to create a new category", async () => {
     const responseToken = await request(app)
