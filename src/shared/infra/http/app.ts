@@ -1,4 +1,5 @@
 import "reflect-metadata";
+import "dotenv/config";
 import express, { Request, Response, NextFunction } from "express";
 import "express-async-errors";
 import { router } from "./routes";
@@ -30,5 +31,4 @@ app.use(
   }
 );
 
-
-export { app }
+export { app };

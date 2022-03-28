@@ -10,20 +10,23 @@
     "seed:admin": "ts-node-dev src/shared/infra/typeorm/seed/admin.ts"
   },
   "dependencies": {
+    "aws-sdk": "^2.1096.0",
     "bcrypt": "^5.0.1",
     "csv-parse": "^5.0.3",
     "dayjs": "^1.10.8",
+    "dotenv": "^16.0.0",
     "express": "^4.17.1",
     "express-async-errors": "^3.1.1",
     "jsonwebtoken": "^8.5.1",
+    "mime": "^3.0.0",
     "multer": "^1.4.4",
     "pg": "^8.7.1",
     "reflect-metadata": "^0.1.13",
+    "supertest": "^6.2.2",
     "swagger-ui-express": "^4.3.0",
     "tsyringe": "^4.6.0",
     "typeorm": "^0.2.41",
-    "uuid": "^8.3.2",
-    "supertest": "^6.2.2"
+    "uuid": "^8.3.2"
   },
   "devDependencies": {
     "@types/bcrypt": "^5.0.0",
@@ -31,6 +34,7 @@
     "@types/express": "^4.17.13",
     "@types/jest": "^27.4.0",
     "@types/jsonwebtoken": "^8.5.6",
+    "@types/mime": "^2.0.3",
     "@types/multer": "^1.4.7",
     "@types/supertest": "^2.0.11",
     "@types/swagger-ui-express": "^4.1.3",
